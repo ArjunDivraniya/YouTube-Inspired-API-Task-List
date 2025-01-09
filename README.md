@@ -1,93 +1,122 @@
-﻿# YouTube-Inspired-API-Task-List
+# Video Management System API
 
-# Project: Full-Stack API for Video Management System
+Welcome to the **Video Management System API** project. This is a full-stack application built with **Node.js** and **MongoDB** that provides a comprehensive set of features for managing users, videos, comments, playlists, and subscriptions. This API can be used to perform CRUD operations on various resources like videos, users, playlists, and more.
 
-This project is a **full-stack REST API** built with **Node.js** and **MongoDB**, enabling users to manage videos, comments, playlists, and subscriptions. The API allows for CRUD operations (Create, Read, Update, Delete) for users, videos, comments, and other entities in the system.
+## 🌟 Features
+
+- **User Management**: Create, fetch, update, and delete user profiles.
+- **Video Management**: Upload, update, and delete videos, along with managing video likes and views.
+- **Comment Management**: Add, update, and delete comments on videos.
+- **Playlist Management**: Create, update, and delete playlists, as well as add videos to playlists.
+- **Subscription Management**: Subscribe and unsubscribe to channels, and view a user's subscriptions.
+  
+
+## 📑 Documentation
+
+For detailed API documentation and example requests, please refer to the following:
+
+- **Postman API Documentation**: [Click here for Postman Documentation](https://documenter.getpostman.com/view/39216595/2sAYQUpu22)
+- **Google Drive Link for Task Overview and Code Explanation**: [Google Drive Link](https://drive.google.com/file/d/1l_tVNu6SuIWAQnRpjLTOOkHloNAkcG9s/view?usp=sharing)
+
+
 
 ## 🛠️ Tech Stack
-- **Backend**: Node.js (Express.js)
+
+- **Backend**: Node.js, Express.js
 - **Database**: MongoDB
-- **API Documentation**: Postman
+- **API Documentation**: [Postman Collection Link](https://www.postman.com/your-collection-link)
 
-## 🧑‍💻 Task Overview
-This project involves the following tasks:
-- **User Management**: Managing user profiles and CRUD operations for users.
-- **Video Management**: Uploading, updating, and deleting videos.
-- **Comment Management**: Adding, updating, and deleting comments for videos.
-- **Playlist Management**: Managing playlists for users, adding videos to playlists.
-- **Subscription Management**: Allowing users to subscribe to channels and view their subscriptions.
+## 🚀 Task Overview
 
-## 🚀 Features
-- **User Management**: Fetch, create, update, and delete user profiles.
-- **Video Management**: Fetch video details, upload new videos, and update video likes/dislikes.
-- **Comment Management**: Add, update, and delete comments for videos.
-- **Playlist Management**: Create and manage playlists, add/remove videos from playlists.
-- **Subscription Management**: Subscribe/unsubscribe to channels and fetch subscriptions.
+This project demonstrates the development of a **Video Management API** using REST principles. It covers the following areas:
 
-## 🧩 API Endpoints
+- **User Management**: Handles the creation, update, and deletion of user profiles and associated data.
+- **Video Management**: Facilitates video uploads, likes/dislikes, and deletion.
+- **Comment Management**: Allows users to add comments to videos, as well as like and delete comments.
+- **Playlist Management**: Enables users to create playlists and manage videos within them.
+- **Subscription Management**: Allows users to subscribe to channels and manage their subscriptions.
 
-### User Management
+### Major Routes
 
-- `GET /users`: Fetch all users.
-- `GET /users/:userId`: Fetch user details by ID.
-- `POST /users`: Create a new user.
-- `PATCH /users/:userId`: Update user profile picture.
-- `DELETE /users/:userId`: Delete a user.
+#### 👤 User Routes
+<details>
+  <summary><b>Click to Expand User Routes</b> <i class="fas fa-users"></i></summary>
 
-### Video Management
+  - **`GET /users`**: Fetch all users.
+  - **`GET /users/:userId`**: Fetch a specific user by ID.
+  - **`POST /users`**: Create a new user.
+  - **`PATCH /users/:userId`**: Update user profile (e.g., update profile picture).
+  - **`DELETE /users/:userId`**: Delete a user.
 
-- `GET /videos`: Fetch all videos.
-- `GET /videos/:videoId`: Fetch a specific video by ID.
-- `POST /videos`: Upload a new video.
-- `PATCH /videos/:videoId/likes`: Increment likes for a video.
-- `DELETE /videos/:videoId`: Delete a video.
+</details>
 
-### Comment Management
+#### 🎥 Video Routes
+<details>
+  <summary><b>Click to Expand Video Routes</b> <i class="fas fa-video"></i></summary>
 
-- `GET /videos/:videoId/comments`: Fetch comments for a video.
-- `POST /comments`: Add a comment to a video.
-- `PATCH /comments/:commentId/likes`: Increment likes for a comment.
-- `DELETE /comments/:commentId`: Delete a comment.
+  - **`GET /videos`**: Fetch all videos.
+  - **`GET /videos/:videoId`**: Fetch a specific video by ID.
+  - **`POST /videos`**: Upload a new video.
+  - **`PATCH /videos/:videoId/likes`**: Increment likes for a video.
+  - **`DELETE /videos/:videoId`**: Delete a video.
 
-### Playlist Management
+</details>
 
-- `GET /playlists/:userId`: Fetch all playlists for a user.
-- `POST /playlists`: Create a new playlist.
-- `PUT /playlists/:playlistId/videos`: Add a video to a playlist.
-- `DELETE /playlists/:playlistId`: Delete a playlist.
+#### 💬 Comment Routes
+<details>
+  <summary><b>Click to Expand Comment Routes</b> <i class="fas fa-comment"></i></summary>
 
-### Subscription Management
+  - **`GET /videos/:videoId/comments`**: Fetch all comments for a video.
+  - **`POST /comments`**: Add a comment to a video.
+  - **`PATCH /comments/:commentId/likes`**: Increment likes for a comment.
+  - **`DELETE /comments/:commentId`**: Delete a comment.
 
-- `GET /subscriptions/:userId`: Fetch subscriptions for a user.
-- `POST /subscriptions`: Subscribe to a channel.
+</details>
 
-## 📜 Code Explanation
+#### 📂 Playlist Routes
+<details>
+  <summary><b>Click to Expand Playlist Routes</b> <i class="fas fa-play-circle"></i></summary>
 
-The code consists of multiple routes for handling various functionalities like users, videos, playlists, and comments. The key files involved are:
+  - **`GET /playlists/:userId`**: Fetch playlists for a user.
+  - **`POST /playlists`**: Create a new playlist.
+  - **`PUT /playlists/:playlistId/videos`**: Add videos to a playlist.
+  - **`DELETE /playlists/:playlistId`**: Delete a playlist.
 
-- `app.js`: Main file to initialize the server and set up API routes.
-- `routes/videos.js`: Routes for handling video CRUD operations.
-- `routes/users.js`: Routes for managing users.
-- `models/video.js`: Video schema and model for MongoDB.
-- `models/user.js`: User schema and model for MongoDB.
+</details>
 
-## 📝 Database Schema
-The MongoDB collections include:
-- **users**: Stores user details like name, email, channel name, etc.
-- **videos**: Stores video details such as title, description, uploader, and video URL.
-- **comments**: Stores comments on videos, including user ID, comment text, and likes.
-- **playlists**: Stores playlists created by users, with a list of video IDs.
-- **subscriptions**: Stores subscription details of users for various channels.
+#### 🔔 Subscription Routes
+<details>
+  <summary><b>Click to Expand Subscription Routes</b> <i class="fas fa-bell"></i></summary>
 
-## 🚀 Getting Started
+  - **`GET /subscriptions/:userId`**: Fetch subscriptions for a user.
+  - **`POST /subscriptions`**: Subscribe to a channel.
 
-### Prerequisites
+</details>
 
-- Node.js installed
-- MongoDB installed and running
+## 👨‍💻 Code Explanation
 
-### Setup
+The project consists of several main files that define routes, models, and server configurations.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/video-management-api.git
+1. **app.js**: The entry point to the application, responsible for setting up the server and middleware.
+2. **models/**: Contains MongoDB schema definitions for users, videos, comments, playlists, and subscriptions.
+3. **routes/**: Contains route files for handling different API endpoints related to users, videos, comments, and playlists.
+
+### Example of video upload:
+
+```json
+{
+  "videoId": "v004",
+  "title": "Node.js in Depth",
+  "description": "Comprehensive guide to Node.js.",
+  "uploader": "u001",
+  "views": 0,
+  "likes": 0,
+  "dislikes": 0,
+  "tags": ["Node.js", "Backend"],
+  "uploadDate": "2023-10-01",
+  "videoUrl": "http://codinggita.com/videos/nodejs.mp4"
+}
+
+
+
+
