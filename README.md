@@ -16,8 +16,7 @@ Welcome to the **Video Management System API** project. This is a full-stack app
 For detailed API documentation and example requests, please refer to the following:
 
 - **Postman API Documentation**: [Click here for Postman Documentation](https://documenter.getpostman.com/view/39216595/2sAYQUpu22)
-- **Google Drive Link for Task Overview and Code Explanation**: [Google Drive Link](https://drive.google.com/file/d/1l_tVNu6SuIWAQnRpjLTOOkHloNAkcG9s/view?usp=sharing)
-
+- **Google Drive Link for Task Overview and Code Explanation**: [Google Drive Link](https://drive.google.com/file/d/1WwJHNxpg0sD4ipq4WRgGEJkNCx5TVHUO/view?usp=sharing)
 
 
 ## 🛠️ Tech Stack
